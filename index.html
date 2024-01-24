@@ -82,7 +82,7 @@
 					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
 					<div class="content">
 						<header>
-							<h2>Broccoli</h2>
+							<h2>Spinach</h2>
 							<p>Write a brief introduction here.</p>
 						</header>
 						<p>Write a brief introduction here.</p>
@@ -96,39 +96,163 @@
 <section id="four" class="wrapper style1 special fade-up">
     <div class="container">
         <header class="major">
-            <h2>环境数据监控</h2>
-            <p>实时展示环境光强、环境温度和环境湿度数据</p>
+            <h2>Environment Monitor</h2>
+            <p>Real-time display of ambient light intensity, ambient temperature, ambient humidity and ambient colour temperature data</p>
         </header>
         <div class="box alt">
             <div class="row gtr-uniform">
                 <!-- 环境光强 -->
                 <section class="col-4 col-6-medium col-12-xsmall">
                     <span class="icon solid alt major fa-sun"></span>
-                    <h3>环境光强</h3>
-                    <div id="lightIntensityChart">光强图表或数据</div>
+                    <h3>Light Intensity</h3>
+                    <div id="lightIntensityChart">
+                        <canvas id="lightIntensityCanvas"></canvas>
+                    </div>
                 </section>
                 <!-- 环境温度 -->
                 <section class="col-4 col-6-medium col-12-xsmall">
                     <span class="icon solid alt major fa-thermometer-half"></span>
-                    <h3>环境温度</h3>
-                    <div id="temperatureChart">温度图表或数据</div>
+                    <h3>Temperature</h3>
+                    <div id="temperatureChart">
+                        <canvas id="temperatureCanvas"></canvas>
+                    </div>
                 </section>
                 <!-- 环境湿度 -->
                 <section class="col-4 col-6-medium col-12-xsmall">
                     <span class="icon solid alt major fa-tint"></span>
-                    <h3>环境湿度</h3>
-                    <div id="humidityChart">湿度图表或数据</div>
+                    <h3>Humidity</h3>
+                    <div id="humidityChart">
+                        <canvas id="humidityCanvas"></canvas>
+                    </div>
+                </section>
+                <!-- 环境色温 -->
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-lightbulb"></span>
+                    <h3>Color Temperature</h3>
+                    <div id="colorTemperatureChart">
+                        <canvas id="colorTemperatureCanvas"></canvas>
+                    </div>
                 </section>
                 <!-- 其他部分保持不变 -->
             </div>
         </div>
         <footer class="major">
             <ul class="actions special">
-                <li><a href="#" class="button">更多信息</a></li>
+                <li><a href="#" class="button">More Information</a></li>
             </ul>
         </footer>
     </div>
 </section>
+
+<script>
+	/*
+    // 假设这些变量包含从后端获取的数据
+    var lightIntensityData = [...]; // 环境光强数据
+    var temperatureData = [...];    // 环境温度数据
+    var humidityData = [...];       // 环境湿度数据
+    var colorTemperatureData = [...]; // 环境色温数据
+    var timeLabels = [...];         // 时间标签
+	*/
+
+    var lightIntensityData= [135.28, 108.00, 119.57, 144.82, 137.35, 80.45, 119.00, 96.97, 97.94, 108.21, 102.88, 129.09, 115.22, 102.43, 108.88, 106.67, 129.88, 95.90, 106.26, 82.92, 48.94, 113.07, 117.29, 85.16]
+    var temperatureData=[26.54, 19.09, 22.09, 21.63, 25.07, 24.94, 22.31, 22.76, 20.22, 18.04, 21.30, 22.31, 24.46, 24.40, 21.23, 21.40, 19.90, 19.16, 18.59, 25.90, 20.98, 21.12, 19.49, 23.55]
+    var humidityData=[33.86, 47.87, 41.05, 53.87, 44.89, 38.19, 49.72, 54.28, 50.67, 53.02, 43.66, 46.37, 43.28, 46.40, 41.87, 32.74, 51.77, 45.98, 33.70, 54.63, 40.93, 50.52, 57.29, 51.29]
+    var colorTemperatureData= [5569.70, 4382.59, 5201.17, 4657.59, 4564.60, 4710.58, 4844.22, 5028.08, 4417.43, 5450.41, 5232.83, 4231.88, 5744.13, 5947.94, 5589.39, 4910.04, 4464.62, 5527.23, 4798.41, 5611.22, 5104.14, 5488.32, 5178.18, 5353.29]
+    function generateTimeLabels() {
+    var timeLabels = [];
+    var now = new Date();
+    // 将时间向后调整到最近的5分钟
+    now.setMinutes(now.getMinutes() - (now.getMinutes() % 5));
+    now.setSeconds(0);
+    now.setMilliseconds(0);
+
+    // 生成过去2小时的时间标签
+    for (var i = 0; i < 24; i++) { // 每5分钟一个时间点，共2小时
+        var timeString = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+        timeLabels.unshift(timeString); // 将时间标签添加到数组的开头
+        now.setMinutes(now.getMinutes() - 5); // 向后计算5分钟
+    }
+    return timeLabels;
+}
+
+var timeLabels = generateTimeLabels();
+console.log(timeLabels);
+
+
+
+    // 初始化所有图表
+    function initCharts() {
+        var lightIntensityCtx = document.getElementById('lightIntensityCanvas').getContext('2d');
+        var temperatureCtx = document.getElementById('temperatureCanvas').getContext('2d');
+        var humidityCtx = document.getElementById('humidityCanvas').getContext('2d');
+        var colorTemperatureCtx = document.getElementById('colorTemperatureCanvas').getContext('2d');
+
+        // 创建环境光强图表
+        new Chart(lightIntensityCtx, {
+            type: 'line',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Light Intensity',
+                    data: lightIntensityData,
+                    fill: false,
+                    borderColor: 'rgb(255, 205, 86)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // 创建环境温度图表
+        new Chart(temperatureCtx, {
+            type: 'line',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Temperature',
+                    data: temperatureData,
+                    fill: false,
+                    borderColor: 'rgb(255, 99, 132)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // 创建环境湿度图表
+        new Chart(humidityCtx, {
+            type: 'line',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Humidity',
+                    data: humidityData,
+                    fill: false,
+                    borderColor: 'rgb(54, 162, 235)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // 创建环境色温图表
+        new Chart(colorTemperatureCtx, {
+            type: 'line',
+            data: {
+                labels: timeLabels,
+                datasets: [{
+                    label: 'Color Temperature',
+                    data: colorTemperatureData,
+                    fill: false,
+                    borderColor: 'rgb(25, 156, 46)',
+                    tension: 0.1
+                }]
+            }
+        });
+    }
+
+    // 页面加载完毕后初始化图表
+    window.onload = initCharts;
+</script>
+
+
 
 
 
@@ -155,6 +279,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 	</body>
 </html>
