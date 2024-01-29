@@ -5,282 +5,510 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Hydroponic System</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload landing">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Hydroponic</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-						</ul>
-					</nav>
-				</header>
+<head>
+    <title>Hydroponic System</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>Hydroponic</h2>
-							<p>This is a product that can help anyone cultivate plants.		pic01					</p>
-						</header>
-						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-					</div>
-					<a href="#one" class="goto-next scrolly">Next</a>
-				</section>
+<body class="is-preload landing">
+    <div id="page-wrapper">
 
-			<!-- One -->
-				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
-					<div class="content">
-						<div class="container">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<header>
-										<h2>Hydroponic Farm</h2>
-										<p>Write a brief introduction here.										</p>
-									</header>
-								</div>
-								<div class="col-4 col-12-medium">
-									<p>Write a brief introduction here.</p>
-								</div>
-								<div class="col-4 col-12-medium">
-									<p>Write a brief introduction here.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<a href="#two" class="goto-next scrolly">Next</a>
-				</section>
+        <!-- Header -->
+        <header id="header">
+            <h1 id="logo"><a href="index.html">Hydroponic</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" id="loginBtn">Login In</a></li> <!-- 登录按钮 -->
+                </ul>
+            </nav>
 
-			<!-- Two -->
-				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Lettuce</h2>
-							<p>Write a brief introduction here.</p>
-						</header>
-						<p>Write a brief introduction here.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#three" class="goto-next scrolly">Next</a>
-				</section>
-
-			<!-- Three -->
-				<section id="three" class="spotlight style3 left">
-					<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
-					<div class="content">
-						<header>
-							<h2>Spinach</h2>
-							<p>Write a brief introduction here.</p>
-						</header>
-						<p>Write a brief introduction here.</p>
-						<ul class="actions">
-							<li><a href="#" class="button">Learn More</a></li>
-						</ul>
-					</div>
-					<a href="#four" class="goto-next scrolly">Next</a>
-				</section>
-<!-- Four -->
-<section id="four" class="wrapper style1 special fade-up">
-    <div class="container">
-        <header class="major">
-            <h2>Environment Monitor</h2>
-            <p>Real-time display of ambient light intensity, ambient temperature, ambient humidity and ambient colour temperature data</p>
         </header>
-        <div class="box alt">
-            <div class="row gtr-uniform">
-                <!-- 环境光强 -->
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-sun"></span>
-                    <h3>Light Intensity</h3>
-                    <div id="lightIntensityChart">
-                        <canvas id="lightIntensityCanvas"></canvas>
+
+        <!-- Banner -->
+        <section id="banner">
+            <div class="content">
+                <header>
+                    <h2>Hydroponic</h2>
+                    <p>This is a product that can help anyone cultivate plants. pic01 </p>
+                </header>
+                <span class="image"><img src="images/pic01.jpg" alt="" /></span>
+            </div>
+            <a href="#one" class="goto-next scrolly">Next</a>
+        </section>
+
+        <!-- One -->
+        <section id="one" class="spotlight style1 bottom">
+            <span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4 col-12-medium">
+                            <header>
+                                <h2>Hydroponic Farm</h2>
+                                <p>Write a brief introduction here. </p>
+                            </header>
+                        </div>
+                        <div class="col-4 col-12-medium">
+                            <p>Write a brief introduction here.</p>
+                        </div>
+                        <div class="col-4 col-12-medium">
+                            <p>Write a brief introduction here.</p>
+                        </div>
                     </div>
-                </section>
-                <!-- 环境温度 -->
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-thermometer-half"></span>
-                    <h3>Temperature</h3>
-                    <div id="temperatureChart">
-                        <canvas id="temperatureCanvas"></canvas>
+                </div>
+            </div>
+            <a href="#two" class="goto-next scrolly">Next</a>
+        </section>
+
+        <!-- Two -->
+        <section id="two" class="spotlight style2 right">
+            <span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+            <div class="content">
+                <header>
+                    <h2>Lettuce</h2>
+                    <p>Write a brief introduction here.</p>
+                </header>
+                <p>Write a brief introduction here.</p>
+                <ul class="actions">
+                    <li><a href="#" class="button">Learn More</a></li>
+                </ul>
+            </div>
+            <a href="#three" class="goto-next scrolly">Next</a>
+        </section>
+
+        <!-- Three -->
+        <section id="three" class="spotlight style3 left">
+            <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+            <div class="content">
+                <header>
+                    <h2>Spinach</h2>
+                    <p>Write a brief introduction here.</p>
+                </header>
+                <p>Write a brief introduction here.</p>
+                <ul class="actions">
+                    <li><a href="#" class="button">Learn More</a></li>
+                </ul>
+            </div>
+            <a href="#four" class="goto-next scrolly">Next</a>
+        </section>
+        <!-- Four -->
+        <section id="four" class="wrapper style1 special fade-up">
+            <div class="container">
+                <header class="major">
+                    <h2>Environment Monitor</h2>
+                    <p>Real-time display of ambient light intensity, ambient temperature, ambient humidity and ambient
+                        colour temperature data</p>
+                </header>
+                <div class="box alt">
+                    <div class="row gtr-uniform">
+                        <!-- 环境光强 -->
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-sun"></span>
+                            <h3>Light Intensity</h3>
+                            <div id="lightIntensityChart">
+                                <canvas id="lightIntensityCanvas"></canvas>
+                            </div>
+                        </section>
+                        <!-- 环境温度 -->
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-thermometer-half"></span>
+                            <h3>Temperature</h3>
+                            <div id="temperatureChart">
+                                <canvas id="temperatureCanvas"></canvas>
+                            </div>
+                        </section>
+                        <!-- 环境湿度 -->
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-tint"></span>
+                            <h3>Humidity</h3>
+                            <div id="humidityChart">
+                                <canvas id="humidityCanvas"></canvas>
+                            </div>
+                        </section>
+                        <!-- 环境色温 -->
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-lightbulb"></span>
+                            <h3>Color Temperature</h3>
+                            <div id="colorTemperatureChart">
+                                <canvas id="colorTemperatureCanvas"></canvas>
+                            </div>
+                        </section>
+                        <!-- 新增图表部分 -->
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-seedling"></span>
+                            <h3>Growth Stage</h3>
+                            <div id="growthStageChart">
+                                <canvas id="growthStageCanvas"></canvas>
+                            </div>
+                        </section>
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-star"></span>
+                            <h3>Plant Health Score</h3>
+                            <div id="plantHealthScoreChart">
+                                <canvas id="plantHealthScoreCanvas"></canvas>
+                            </div>
+                        </section>
+
+                        <!-- 其他部分保持不变 -->
                     </div>
-                </section>
-                <!-- 环境湿度 -->
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-tint"></span>
-                    <h3>Humidity</h3>
-                    <div id="humidityChart">
-                        <canvas id="humidityCanvas"></canvas>
-                    </div>
-                </section>
-                <!-- 环境色温 -->
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-lightbulb"></span>
-                    <h3>Color Temperature</h3>
-                    <div id="colorTemperatureChart">
-                        <canvas id="colorTemperatureCanvas"></canvas>
-                    </div>
-                </section>
-                <!-- 其他部分保持不变 -->
+                </div>
+                <footer class="major">
+                    <ul class="actions special">
+                        <li><a href="#" class="button">More Information</a></li>
+                    </ul>
+                </footer>
+            </div>
+        </section>
+
+        <!-- 弹出式登录窗口的HTML -->
+      <!--  <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                
+                <form method="post" action="path_to_login_processing_script">
+
+                    <h2>Login</h2>
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Login">
+                </form>
             </div>
         </div>
-        <footer class="major">
-            <ul class="actions special">
-                <li><a href="#" class="button">More Information</a></li>
+    -->
+        <!-- 在这里改数据库-->
+        <!-- 弹出式登录窗口的HTML -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="loginForm" method="post">
+            <h2>Login</h2>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="button" id="submitLogin" value="Login">
+        </form>
+    </div>
+</div>
+
+
+
+        <script>
+            var modal, span, loginBtn;
+            function initModal() {
+                modal = document.getElementById("loginModal");
+                span = document.getElementsByClassName("close")[0];
+                loginBtn = document.getElementById("loginBtn");
+                modal.style.display = "block";
+
+                // 点击“Login In”显示模态
+                loginBtn.onclick = function () {
+                    modal.style.display = "block";
+                };
+
+                // 点击关闭按钮或模态外部隐藏模态
+                span.onclick = function () {
+                    modal.style.display = "none";
+                };
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                };
+            }
+            /*
+            // 假设这些变量包含从后端获取的数据
+            var lightIntensityData = [...]; // 环境光强数据
+            var temperatureData = [...];    // 环境温度数据
+            var humidityData = [...];       // 环境湿度数据
+            var colorTemperatureData = [...]; // 环境色温数据
+            var timeLabels = [...];         // 时间标签
+            */
+
+            var lightIntensityData = [135.28, 108.00, 119.57, 144.82, 137.35, 80.45, 119.00, 96.97, 97.94, 108.21, 102.88, 129.09, 115.22, 102.43, 108.88, 106.67, 129.88, 95.90, 106.26, 82.92, 48.94, 113.07, 117.29, 85.16]
+            var temperatureData = [26.54, 19.09, 22.09, 21.63, 25.07, 24.94, 22.31, 22.76, 20.22, 18.04, 21.30, 22.31, 24.46, 24.40, 21.23, 21.40, 19.90, 19.16, 18.59, 25.90, 20.98, 21.12, 19.49, 23.55]
+            var humidityData = [33.86, 47.87, 41.05, 53.87, 44.89, 38.19, 49.72, 54.28, 50.67, 53.02, 43.66, 46.37, 43.28, 46.40, 41.87, 32.74, 51.77, 45.98, 33.70, 54.63, 40.93, 50.52, 57.29, 51.29]
+            var colorTemperatureData = [5569.70, 4382.59, 5201.17, 4657.59, 4564.60, 4710.58, 4844.22, 5028.08, 4417.43, 5450.41, 5232.83, 4231.88, 5744.13, 5947.94, 5589.39, 4910.04, 4464.62, 5527.23, 4798.41, 5611.22, 5104.14, 5488.32, 5178.18, 5353.29]
+            var currentStage = 0;
+            var currentProgress = 0;
+            var plantHealthScore = [78, 85, 60, 25, 100];
+
+            function generateTimeLabels() {
+                var timeLabels = [];
+                var now = new Date();
+                // 将时间向后调整到最近的5分钟
+                now.setMinutes(now.getMinutes() - (now.getMinutes() % 5));
+                now.setSeconds(0);
+                now.setMilliseconds(0);
+
+                // 生成过去2小时的时间标签
+                for (var i = 0; i < 24; i++) { // 每5分钟一个时间点，共2小时
+                    var timeString = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+                    timeLabels.unshift(timeString); // 将时间标签添加到数组的开头
+                    now.setMinutes(now.getMinutes() - 5); // 向后计算5分钟
+                }
+                return timeLabels;
+            }
+
+            var timeLabels = generateTimeLabels();
+            console.log(timeLabels);
+            function drawCenterText(chart, text) {
+                var ctx = chart.ctx;
+                ctx.save();
+                ctx.font = '30px Arial';
+                ctx.fillStyle = 'white';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                var centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+                var centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+                ctx.fillText(text, centerX, centerY);
+                ctx.restore();
+            }
+
+
+
+            // 初始化所有图表
+            function initCharts() {
+                var lightIntensityCtx = document.getElementById('lightIntensityCanvas').getContext('2d');
+                var temperatureCtx = document.getElementById('temperatureCanvas').getContext('2d');
+                var humidityCtx = document.getElementById('humidityCanvas').getContext('2d');
+                var colorTemperatureCtx = document.getElementById('colorTemperatureCanvas').getContext('2d');
+                var growthStageCtx = document.getElementById('growthStageCanvas').getContext('2d');
+                var plantHealthScoreCtx = document.getElementById('plantHealthScoreCanvas').getContext('2d');
+
+                // 创建环境光强图表
+                new Chart(lightIntensityCtx, {
+                    type: 'line',
+                    data: {
+                        labels: timeLabels,
+                        datasets: [{
+                            label: 'Light Intensity',
+                            data: lightIntensityData,
+                            fill: false,
+                            borderColor: 'rgb(255, 205, 86)',
+                            tension: 0.1
+                        }]
+                    }
+                });
+
+                // 创建环境温度图表
+                new Chart(temperatureCtx, {
+                    type: 'line',
+                    data: {
+                        labels: timeLabels,
+                        datasets: [{
+                            label: 'Temperature',
+                            data: temperatureData,
+                            fill: false,
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1
+                        }]
+                    }
+                });
+
+                // 创建环境湿度图表
+                new Chart(humidityCtx, {
+                    type: 'line',
+                    data: {
+                        labels: timeLabels,
+                        datasets: [{
+                            label: 'Humidity',
+                            data: humidityData,
+                            fill: false,
+                            borderColor: 'rgb(54, 162, 235)',
+                            tension: 0.1
+                        }]
+                    }
+                });
+
+                // 创建环境色温图表
+                new Chart(colorTemperatureCtx, {
+                    type: 'line',
+                    data: {
+                        labels: timeLabels,
+                        datasets: [{
+                            label: 'Color Temperature',
+                            data: colorTemperatureData,
+                            fill: false,
+                            borderColor: 'rgb(25, 156, 46)',
+                            tension: 0.1
+                        }]
+                    }
+                });
+                // 假设当前阶段为第三个阶段（索引为2）
+                window.growthStageChart = new Chart(growthStageCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Progress', 'Remaining'],
+                        datasets: [{
+                            data: [0, 100],
+                            backgroundColor: ['green', 'lightgrey'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        circumference: 360,
+                        rotation: -90,
+                        cutout: '80%',
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        animation: {
+                            // 禁用动画，以便我们可以手动绘制文本
+                            duration: 0
+                        }
+                    }
+                });
+
+                // 设置定时器更新环形图
+                setInterval(function () {
+                    // 更新进度
+                    currentProgress += 10;
+                    if (currentProgress > 100) {
+                        currentProgress = 0;
+                        currentStage = (currentStage + 1) % 4;
+                    }
+
+                    // 更新颜色
+                    var stageColors = ['green', 'blue', 'red', 'yellow'];
+                    window.growthStageChart.data.datasets[0].backgroundColor[0] = stageColors[currentStage];
+                    window.growthStageChart.data.datasets[0].data = [currentProgress, 100 - currentProgress];
+                    window.growthStageChart.update();
+
+                    // 绘制中心文本
+                    drawCenterText(window.growthStageChart, currentProgress + '%');
+                }, 1000);
+                // 植物健康评分图表
+                new Chart(plantHealthScoreCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Nutrition', 'Water', 'Light', 'Temperature', 'Humidity'],
+                        datasets: [{
+                            label: 'Plant Health Score',
+                            data: plantHealthScore, // 示例数据
+                            backgroundColor: 'rgba(255, 100, 0, 0.2)', // 偏红的橘黄色背景颜色
+                            borderColor: 'rgba(255, 100, 0, 1)', // 偏红的橘黄色边框颜色
+                            borderWidth: 1
+
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            borderDash: [5, 1], // 设置刻度线为虚线，[虚线长度, 空白长度]
+                            r: {
+                                beginAtZero: true,
+                                max: 100, // 设置最大值为100
+
+                                ticks: {
+                                    backdropColor: 'transparent', // 设置刻度标签背景为透明
+                                    //borderWidth: 0, // 设置刻度标签边框宽度为0
+                                    stepSize: 25, // 设置刻度间隔为25
+                                    //maxTicksLimit: 4, // 设置最大刻度标签数量
+                                    color: 'white', // 设置标签字体颜色为白色
+                                    font: {
+                                        weight: 'bold' // 设置标签字体为粗体
+                                    }
+                                },
+                                grid: {
+                                    color: 'gray', // 设置刻度线的颜色为灰色
+
+                                },
+                                angleLines: {
+                                    display: true,
+                                    color: 'gray',
+                                    borderDash: [5, 5] // 设置为虚线
+                                },
+                                gridLines: {
+                                    color: 'gray',
+                                    borderDash: [5, 5] // 设置为虚线
+                                },
+                            },
+
+
+                        }
+                    }
+                });
+
+
+
+
+
+            }
+              // 在此处定义validateLogin
+    function validateLogin() {
+        console.log("test");
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        var presetUsername = 'wulianwang';
+        var presetPassword = '123456';
+        
+        if (username === presetUsername && password === presetPassword) {
+            alert('Success');
+            modal.style.display = 'none';
+        } else {
+            alert('Invalid username or password');
+        }
+    }
+
+       
+
+            // Modifying the window.onload function to initialize the new charts along with existing ones
+            window.onload = function () {
+    initModal(); // 初始化登录模态
+    initCharts(); // 初始化所有图表
+
+  
+
+    document.getElementById('submitLogin').addEventListener('click', validateLogin);
+};
+
+
+
+        </script>
+
+
+
+
+
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
             </ul>
         </footer>
+
     </div>
-</section>
 
-<script>
-	/*
-    // 假设这些变量包含从后端获取的数据
-    var lightIntensityData = [...]; // 环境光强数据
-    var temperatureData = [...];    // 环境温度数据
-    var humidityData = [...];       // 环境湿度数据
-    var colorTemperatureData = [...]; // 环境色温数据
-    var timeLabels = [...];         // 时间标签
-	*/
-
-    var lightIntensityData= [135.28, 108.00, 119.57, 144.82, 137.35, 80.45, 119.00, 96.97, 97.94, 108.21, 102.88, 129.09, 115.22, 102.43, 108.88, 106.67, 129.88, 95.90, 106.26, 82.92, 48.94, 113.07, 117.29, 85.16]
-    var temperatureData=[26.54, 19.09, 22.09, 21.63, 25.07, 24.94, 22.31, 22.76, 20.22, 18.04, 21.30, 22.31, 24.46, 24.40, 21.23, 21.40, 19.90, 19.16, 18.59, 25.90, 20.98, 21.12, 19.49, 23.55]
-    var humidityData=[33.86, 47.87, 41.05, 53.87, 44.89, 38.19, 49.72, 54.28, 50.67, 53.02, 43.66, 46.37, 43.28, 46.40, 41.87, 32.74, 51.77, 45.98, 33.70, 54.63, 40.93, 50.52, 57.29, 51.29]
-    var colorTemperatureData= [5569.70, 4382.59, 5201.17, 4657.59, 4564.60, 4710.58, 4844.22, 5028.08, 4417.43, 5450.41, 5232.83, 4231.88, 5744.13, 5947.94, 5589.39, 4910.04, 4464.62, 5527.23, 4798.41, 5611.22, 5104.14, 5488.32, 5178.18, 5353.29]
-    function generateTimeLabels() {
-    var timeLabels = [];
-    var now = new Date();
-    // 将时间向后调整到最近的5分钟
-    now.setMinutes(now.getMinutes() - (now.getMinutes() % 5));
-    now.setSeconds(0);
-    now.setMilliseconds(0);
-
-    // 生成过去2小时的时间标签
-    for (var i = 0; i < 24; i++) { // 每5分钟一个时间点，共2小时
-        var timeString = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-        timeLabels.unshift(timeString); // 将时间标签添加到数组的开头
-        now.setMinutes(now.getMinutes() - 5); // 向后计算5分钟
-    }
-    return timeLabels;
-}
-
-var timeLabels = generateTimeLabels();
-console.log(timeLabels);
-
-
-
-    // 初始化所有图表
-    function initCharts() {
-        var lightIntensityCtx = document.getElementById('lightIntensityCanvas').getContext('2d');
-        var temperatureCtx = document.getElementById('temperatureCanvas').getContext('2d');
-        var humidityCtx = document.getElementById('humidityCanvas').getContext('2d');
-        var colorTemperatureCtx = document.getElementById('colorTemperatureCanvas').getContext('2d');
-
-        // 创建环境光强图表
-        new Chart(lightIntensityCtx, {
-            type: 'line',
-            data: {
-                labels: timeLabels,
-                datasets: [{
-                    label: 'Light Intensity',
-                    data: lightIntensityData,
-                    fill: false,
-                    borderColor: 'rgb(255, 205, 86)',
-                    tension: 0.1
-                }]
-            }
-        });
-
-        // 创建环境温度图表
-        new Chart(temperatureCtx, {
-            type: 'line',
-            data: {
-                labels: timeLabels,
-                datasets: [{
-                    label: 'Temperature',
-                    data: temperatureData,
-                    fill: false,
-                    borderColor: 'rgb(255, 99, 132)',
-                    tension: 0.1
-                }]
-            }
-        });
-
-        // 创建环境湿度图表
-        new Chart(humidityCtx, {
-            type: 'line',
-            data: {
-                labels: timeLabels,
-                datasets: [{
-                    label: 'Humidity',
-                    data: humidityData,
-                    fill: false,
-                    borderColor: 'rgb(54, 162, 235)',
-                    tension: 0.1
-                }]
-            }
-        });
-
-        // 创建环境色温图表
-        new Chart(colorTemperatureCtx, {
-            type: 'line',
-            data: {
-                labels: timeLabels,
-                datasets: [{
-                    label: 'Color Temperature',
-                    data: colorTemperatureData,
-                    fill: false,
-                    borderColor: 'rgb(25, 156, 46)',
-                    tension: 0.1
-                }]
-            }
-        });
-    }
-
-    // 页面加载完毕后初始化图表
-    window.onload = initCharts;
-</script>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 
 
+</body>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-	</body>
 </html>
